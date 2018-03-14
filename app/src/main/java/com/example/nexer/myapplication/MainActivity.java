@@ -11,6 +11,7 @@ import android.widget.EditText;
     Websites: Stackoverflow
               https://developer.android.com/guide/topics/ui/notifiers/toasts.html
               github.com
+              https://romannurik.github.io/AndroidAssetStudio/
     People: Jayme Doran <- Helped me with Navigation
             Kuba Kulik <- Helped me with Sql syntax
  */
@@ -31,8 +32,6 @@ public class MainActivity extends AppCompatActivity  {
         String type = "login";
         BackgroundWorker backgroundWorker = new BackgroundWorker(this);
         backgroundWorker.execute(type, username, password);
-//      startActivity(new Intent(MainActivity.this, NavigationActivity.class));
-
     }
 
 }
