@@ -80,7 +80,7 @@ public class BackgroundWorker extends AsyncTask<String,Void,String> {
 //        if(result.contains("Login Successful, Welcome!")){
 //            startActivity(new Intent(BackgroundWorker.this,NavigationActivity.class));
 //        }else{
-//
+//           Toast.makeText(context, "Wrong Username or Password!", Toast.LENGTH_SHORT).show();
 //        }
         if(result.contains("Login Successful, Welcome!")) {//Checking for the login validation (login.php)
 
