@@ -83,7 +83,9 @@ public class NavigationActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_insert) {
-            context.startActivity(new Intent(context, InsertActivity.class));
+            Intent myIntent = new Intent(NavigationActivity.this,
+                    InsertActivity.class);
+            startActivity(myIntent);
         } else if (id == R.id.nav_delete) {
 
         } else if (id == R.id.nav_update) {
