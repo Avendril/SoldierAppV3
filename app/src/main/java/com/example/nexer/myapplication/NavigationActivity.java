@@ -94,12 +94,19 @@ public class NavigationActivity extends AppCompatActivity
             startActivity(new Intent(NavigationActivity.this, ChooseActivity.class));
 
         } else if (id == R.id.nav_update) {
+
             Toast.makeText(this, "Update",Toast.LENGTH_SHORT).show();
+
         } else if (id == R.id.nav_preview) {
+
             Toast.makeText(this, "Preview",Toast.LENGTH_SHORT).show();
+
         } else if (id == R.id.nav_contact) {
+
             Toast.makeText(this, "Contact",Toast.LENGTH_SHORT).show();
+
         } else if (id == R.id.nav_gps) {
+
             Toast.makeText(this, "DPS",Toast.LENGTH_SHORT).show();
         }
 

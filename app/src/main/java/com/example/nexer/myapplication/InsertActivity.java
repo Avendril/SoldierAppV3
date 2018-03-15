@@ -38,7 +38,7 @@ public class InsertActivity extends AppCompatActivity {
         str_password = password.getText().toString();
 
         String type = "insert";
-        BackgroundWorkerInsert backgroundWorkerInsert = new BackgroundWorkerInsert(this);
+        BackgroundWorker backgroundWorkerInsert = new BackgroundWorker(this);
         backgroundWorkerInsert.execute(type, str_name, str_surname, str_email, str_phone, str_address1, str_address2, str_militaryRank, str_username, str_password);
     }
 }

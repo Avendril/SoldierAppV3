@@ -24,7 +24,7 @@ public class RemoveActivity extends AppCompatActivity {
         str_surname = surname.getText().toString();
 
         String type = "deletebyname";
-        BackgroundWorkerDelete backgroundWorkerDelete = new BackgroundWorkerDelete(this);
+        BackgroundWorker backgroundWorkerDelete = new BackgroundWorker(this);
         backgroundWorkerDelete.execute(type, str_name, str_surname);
     }
 }

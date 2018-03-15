@@ -22,7 +22,7 @@ public class RemoveIDActivity extends AppCompatActivity {
         str_ID = ID.getText().toString();
 
         String type = "deletebyID";
-        BackgroundWorkerDelete backgroundWorkerDelete = new BackgroundWorkerDelete(this);
+        BackgroundWorker backgroundWorkerDelete = new BackgroundWorker(this);
         backgroundWorkerDelete.execute(type, str_ID);
     }
 }
