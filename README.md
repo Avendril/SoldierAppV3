@@ -4,7 +4,7 @@
 
 - Android Studio 3.0
 
-- WAMP
+- WAMP or cPanel (goDaddy)
 
 
 ## How to use:
@@ -21,3 +21,10 @@ https://github.com/Avendril/Php-For-SoldierAppV2)
 - users will have 10 columns ID(auto increment,primary key,unique), name, surname, email, phoneNo(unique),address1,address2,rank,username(unique) and password.
 
 - After you setup the database you should be able to use the app on your emulator if you used localhost or anywhere if you used cPanel hosting (goDaddy for example).
+
+
+##### Setting up Android Studio 3.0
+
+- Just put the package from here into the workplace of your Android studio and it should be fine.
+
+- Just a note, I was using Pixel 2 running android 8 for my emulator, the UI might look slightly different on your emulator.
