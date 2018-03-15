@@ -14,6 +14,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.content.Context;
+import android.widget.Toast;
 
 public class NavigationActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -83,21 +84,23 @@ public class NavigationActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_insert) {
-            Intent myIntent = new Intent(NavigationActivity.this,
-                    InsertActivity.class);
-            startActivity(myIntent);
+            Toast.makeText(this, "Insert",Toast.LENGTH_SHORT).show();
+//            Intent myIntent = new Intent(NavigationActivity.this,
+//                    InsertActivity.class);
+//            startActivity(myIntent);
         } else if (id == R.id.nav_delete) {
-            Intent myIntent = new Intent(NavigationActivity.this,
-                    ChooseActivity.class);
-            startActivity(myIntent);
+            Toast.makeText(this, "Delete",Toast.LENGTH_SHORT).show();
+//            Intent chooseIntent = new Intent(NavigationActivity.this,
+//                    ChooseActivity.class);
+//            startActivity(chooseIntent);
         } else if (id == R.id.nav_update) {
-
+            Toast.makeText(this, "Update",Toast.LENGTH_SHORT).show();
         } else if (id == R.id.nav_preview) {
-
+            Toast.makeText(this, "Preview",Toast.LENGTH_SHORT).show();
         } else if (id == R.id.nav_contact) {
-
+            Toast.makeText(this, "Contact",Toast.LENGTH_SHORT).show();
         } else if (id == R.id.nav_gps) {
-
+            Toast.makeText(this, "DPS",Toast.LENGTH_SHORT).show();
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

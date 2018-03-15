@@ -84,8 +84,9 @@ public class BackgroundWorkerDeleteByName extends AsyncTask<String,Void,String> 
     @Override
     protected void onPostExecute(String result) {
         alertDialog.setMessage("Deletion has been successful!");
-        if(result.contains("User has been removed, you can now use back to exit this screen!")) {//Checking if the insert was a success (insert.php)
-            Toast.makeText(context, "The user has been deleted, you can leave now!", Toast.LENGTH_SHORT).show();
+        if(result.contains("User has been removed, You will be returned to the nav screen!")) {//Checking if the insert was a success (insert.php)
+            Toast.makeText(context, "The user has been deleted, You have been returned to the nav screen!", Toast.LENGTH_SHORT).show();
+
         }else
         {
             Toast.makeText(context, "Something went wrong!", Toast.LENGTH_SHORT).show();
