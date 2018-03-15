@@ -87,7 +87,9 @@ public class NavigationActivity extends AppCompatActivity
                     InsertActivity.class);
             startActivity(myIntent);
         } else if (id == R.id.nav_delete) {
-
+            Intent myIntent = new Intent(NavigationActivity.this,
+                    ChooseActivity.class);
+            startActivity(myIntent);
         } else if (id == R.id.nav_update) {
 
         } else if (id == R.id.nav_preview) {

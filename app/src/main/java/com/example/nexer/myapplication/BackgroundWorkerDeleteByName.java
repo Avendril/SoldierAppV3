@@ -21,28 +21,21 @@ import java.net.URLEncoder;
 import static android.support.v4.content.ContextCompat.startActivity;
 
 
-public class BackgroundWorkerInsert extends AsyncTask<String,Void,String> {
+public class BackgroundWorkerDeleteByName extends AsyncTask<String,Void,String> {
     Context context;
     AlertDialog alertDialog;
-    BackgroundWorkerInsert (Context ctx) {
+    BackgroundWorkerDeleteByName (Context ctx) {
         context = ctx;
     }
     @Override
     protected String doInBackground(String... params) {
         String type = params[0];
-        String insert_url = "http://10.0.2.2/insert.php"; //If not working, use the ip that DNS gave you ipconfig
+        String insert_url = "http://10.0.2.2/removebyname.php"; //If not working, use the ip that DNS gave you ipconfig
 
-        if(type.equals("insert")){
+        if(type.equals("delete")){
             try {
                 String name = params[1];
                 String surname = params[2];
-                String email = params[3];
-                String phoneNo = params[4];
-                String address1 = params[5];
-                String address2 = params[6];
-                String rank = params[7];
-                String username = params[8];
-                String password = params[9];
 
                 URL url = new URL(insert_url);
                 HttpURLConnection httpURLConnection = (HttpURLConnection)url.openConnection();
@@ -53,14 +46,7 @@ public class BackgroundWorkerInsert extends AsyncTask<String,Void,String> {
                 BufferedWriter bufferedWriter = new BufferedWriter(new OutputStreamWriter(outputStream, "UTF-8"));
 
                 String post_data = URLEncoder.encode("name","UTF-8")+"="+URLEncoder.encode(name,"UTF-8")+"&"
-                        +URLEncoder.encode("surname","UTF-8")+"="+URLEncoder.encode(surname,"UTF-8")+"&"
-                        +URLEncoder.encode("email","UTF-8")+"="+URLEncoder.encode(email,"UTF-8")+"&"
-                        +URLEncoder.encode("phoneNo","UTF-8")+"="+URLEncoder.encode(phoneNo,"UTF-8")+"&"
-                        +URLEncoder.encode("address1","UTF-8")+"="+URLEncoder.encode(address1,"UTF-8")+"&"
-                        +URLEncoder.encode("address2","UTF-8")+"="+URLEncoder.encode(address2,"UTF-8")+"&"
-                        +URLEncoder.encode("militaryRank","UTF-8")+"="+URLEncoder.encode(rank,"UTF-8")+"&"
-                        +URLEncoder.encode("username","UTF-8")+"="+URLEncoder.encode(username,"UTF-8")+"&"
-                        +URLEncoder.encode("password","UTF-8")+"="+URLEncoder.encode(password,"UTF-8"); //using the username and password above to check for inside the db
+                        +URLEncoder.encode("surname","UTF-8")+"="+URLEncoder.encode(surname,"UTF-8"); //using the username and password above to check for inside the db
 
                 bufferedWriter.write(post_data);
                 bufferedWriter.flush();
@@ -92,15 +78,14 @@ public class BackgroundWorkerInsert extends AsyncTask<String,Void,String> {
     @Override
     protected void onPreExecute() {
         alertDialog = new AlertDialog.Builder(context).create();
-        alertDialog.setTitle("Insert Status");
+        alertDialog.setTitle("Deletion Status");
     }
 
     @Override
     protected void onPostExecute(String result) {
-        alertDialog.setMessage("Registration of the new user was a success, we will now back you out to nav.");
-        if(result.contains("New record created successfully")) {//Checking if the insert was a success (insert.php)
-            Toast.makeText(context, "Data insertion successful! We will move you back to Navigation", Toast.LENGTH_SHORT).show();
-
+        alertDialog.setMessage("Deletion has been successful!");
+        if(result.contains("User has been removed, you can now use back to exit this screen!")) {//Checking if the insert was a success (insert.php)
+            Toast.makeText(context, "The user has been deleted, you can leave now!", Toast.LENGTH_SHORT).show();
         }else
         {
             Toast.makeText(context, "Something went wrong!", Toast.LENGTH_SHORT).show();

@@ -1,4 +1,5 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
     android:layout_height="match_parent" tools:context=".MainActivity"
     android:id="@+id/myrl">
@@ -7,12 +8,12 @@
         android:id="@+id/LoginField"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
+        android:layout_below="@+id/imageView3"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="189dp"
+        android:layout_marginTop="19dp"
+        android:drawableLeft="@drawable/loginbarimage"
         android:ems="10"
-        android:inputType="textPersonName"
-        android:drawableLeft="@drawable/loginbarimage" />
+        android:inputType="textPersonName" />
 
     <EditText
         android:id="@+id/PasswordField"
@@ -20,10 +21,10 @@
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/LoginField"
         android:layout_alignStart="@+id/LoginField"
-        android:layout_centerVertical="true"
+        android:layout_below="@+id/LoginField"
+        android:drawableLeft="@drawable/passwordimage"
         android:ems="10"
-        android:inputType="textPassword"
-        android:drawableLeft="@drawable/passwordimage"/>
+        android:inputType="textPassword" />
 
     <Button
         android:id="@+id/LoginButton"
@@ -31,7 +32,17 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/PasswordField"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="42dp"
+        android:layout_marginTop="18dp"
         android:onClick="OnLogin"
         android:text="Login" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="256dp"
+        android:layout_height="256dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="11dp"
+        app:srcCompat="@drawable/frontscreenimage" />
+
 </RelativeLayout>
