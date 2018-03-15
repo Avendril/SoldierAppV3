@@ -84,15 +84,15 @@ public class NavigationActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_insert) {
+
             Toast.makeText(this, "Insert",Toast.LENGTH_SHORT).show();
-//            Intent myIntent = new Intent(NavigationActivity.this,
-//                    InsertActivity.class);
-//            startActivity(myIntent);
+            startActivity(new Intent(NavigationActivity.this, InsertActivity.class));
+
         } else if (id == R.id.nav_delete) {
+
             Toast.makeText(this, "Delete",Toast.LENGTH_SHORT).show();
-//            Intent chooseIntent = new Intent(NavigationActivity.this,
-//                    ChooseActivity.class);
-//            startActivity(chooseIntent);
+            startActivity(new Intent(NavigationActivity.this, ChooseActivity.class));
+
         } else if (id == R.id.nav_update) {
             Toast.makeText(this, "Update",Toast.LENGTH_SHORT).show();
         } else if (id == R.id.nav_preview) {

@@ -13,18 +13,18 @@ public class RemoveActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_insert);
+        setContentView(R.layout.activity_remove);
 
-        name = (EditText)findViewById(R.id.insertName);
-        surname = (EditText)findViewById(R.id.insertSurname);
+        name = (EditText)findViewById(R.id.deletename);
+        surname = (EditText)findViewById(R.id.deletesurname);
     }
 
     public void OnDelete(View view){
         str_name = name.getText().toString();
         str_surname = surname.getText().toString();
 
-        String type = "delete";
-        BackgroundWorkerDeleteByName backgroundWorkerDeleteByName = new BackgroundWorkerDeleteByName(this);
-        backgroundWorkerDeleteByName.execute(type, str_name, str_surname);
+        String type = "deletebyname";
+        BackgroundWorkerDelete backgroundWorkerDelete = new BackgroundWorkerDelete(this);
+        backgroundWorkerDelete.execute(type, str_name, str_surname);
     }
 }

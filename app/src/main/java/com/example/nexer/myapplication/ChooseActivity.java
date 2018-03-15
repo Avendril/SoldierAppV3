@@ -11,7 +11,7 @@ public class ChooseActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_insert);
+        setContentView(R.layout.activity_choose);
     }
 
     public void OnDeleteByName(View view){
@@ -22,7 +22,7 @@ public class ChooseActivity extends AppCompatActivity {
 
     public void OnDeleteByID(View view){
         Intent myIntent = new Intent(ChooseActivity.this,
-                ChooseActivity.class);
+                RemoveIDActivity.class);
         startActivity(myIntent);
     }
 }
