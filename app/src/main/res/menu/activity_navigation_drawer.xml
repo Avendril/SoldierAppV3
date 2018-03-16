@@ -29,9 +29,9 @@
                 android:icon="@drawable/contactusmenuicon"
                 android:title="Contact Us" />
             <item
-                android:id="@+id/nav_gps"
+                android:id="@+id/nav_prop"
                 android:icon="@drawable/gpsmenuicon"
-                android:title="GPS (WIP)" />
+                android:title="Propaganda" />
         </menu>
     </item>
 

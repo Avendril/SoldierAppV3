@@ -41,6 +41,7 @@ public class BackgroundWorker extends AsyncTask<String,Void,String> {
         String delete_url = "http://10.0.2.2/removebyname.php"; //If not working, use the ip that DNS gave you ipconfig
         String deletebyID_url = "http://10.0.2.2/removebyID.php";
         String search_url = "http://10.0.2.2/search.php";
+        String retrieve_url = "http://10.0.2.2/retrieve.php";
 
         if(type.equals("login")) {
             try {
@@ -269,6 +270,43 @@ public class BackgroundWorker extends AsyncTask<String,Void,String> {
                 String ID = params[1];
 
                 URL url = new URL(search_url);
+                HttpURLConnection httpURLConnection = (HttpURLConnection)url.openConnection();
+                httpURLConnection.setRequestMethod("POST"); //Type of data that PHP files (conn.php and Login.php) has to use
+                httpURLConnection.setDoOutput(true);
+                httpURLConnection.setDoInput(true);
+                OutputStream outputStream = httpURLConnection.getOutputStream();
+                BufferedWriter bufferedWriter = new BufferedWriter(new OutputStreamWriter(outputStream, "UTF-8"));
+
+                String post_data = URLEncoder.encode("id","UTF-8")+"="+URLEncoder.encode(ID,"UTF-8"); //using the username and password above to check for inside the db
+
+                bufferedWriter.write(post_data);
+                bufferedWriter.flush();
+                bufferedWriter.close();
+                outputStream.close();//Flushing the buffer so it doesn't use so much memory and closing it afterwards just to save some memory
+                InputStream inputStream = httpURLConnection.getInputStream();//open another inputstream
+                BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream,"iso-8859-1"));
+                String result="";
+                String line="";
+
+                while((line = bufferedReader.readLine())!= null) {
+                    result += line;
+                }
+
+                bufferedReader.close();
+                inputStream.close();//Close both buffer and reader, not flushing since this might be needed later
+                httpURLConnection.disconnect();//Disconnecting from  the database after the login is finished!
+
+                return result;
+            } catch (MalformedURLException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }else if(type.equals("retrieve")){
+            try {
+                String ID = params[1];
+
+                URL url = new URL(retrieve_url);
                 HttpURLConnection httpURLConnection = (HttpURLConnection)url.openConnection();
                 httpURLConnection.setRequestMethod("POST"); //Type of data that PHP files (conn.php and Login.php) has to use
                 httpURLConnection.setDoOutput(true);

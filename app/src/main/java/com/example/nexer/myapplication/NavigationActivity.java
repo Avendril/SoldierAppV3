@@ -107,7 +107,7 @@ public class NavigationActivity extends AppCompatActivity
 
             Toast.makeText(this, "Contact",Toast.LENGTH_SHORT).show();
 
-        } else if (id == R.id.nav_gps) {
+        } else if (id == R.id.nav_prop) {
 
             Toast.makeText(this, "DPS",Toast.LENGTH_SHORT).show();
         }
