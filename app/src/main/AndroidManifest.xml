@@ -25,7 +25,9 @@
         <activity android:name=".InsertActivity" />
         <activity android:name=".RemoveActivity" />
         <activity android:name=".ChooseActivity" />
-        <activity android:name=".RemoveIDActivity"></activity>
+        <activity android:name=".RemoveIDActivity" />
+        <activity android:name=".UpdateActivity" />
+        <activity android:name=".PrecursorForUpdateActivity"></activity>
     </application>
 
 </manifest>

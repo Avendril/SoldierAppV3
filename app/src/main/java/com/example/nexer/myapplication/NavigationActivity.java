@@ -96,6 +96,8 @@ public class NavigationActivity extends AppCompatActivity
         } else if (id == R.id.nav_update) {
 
             Toast.makeText(this, "Update",Toast.LENGTH_SHORT).show();
+            //startActivity(new Intent(NavigationActivity.this, PrecursorForUpdateActivity.class));
+            startActivity(new Intent(NavigationActivity.this, UpdateActivity.class));
 
         } else if (id == R.id.nav_preview) {
 
