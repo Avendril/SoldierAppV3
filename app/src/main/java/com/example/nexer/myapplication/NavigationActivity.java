@@ -103,13 +103,6 @@ public class NavigationActivity extends AppCompatActivity
 
             Toast.makeText(this, "Preview",Toast.LENGTH_SHORT).show();
 
-        } else if (id == R.id.nav_contact) {
-
-            Toast.makeText(this, "Contact",Toast.LENGTH_SHORT).show();
-
-        } else if (id == R.id.nav_prop) {
-
-            Toast.makeText(this, "DPS",Toast.LENGTH_SHORT).show();
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

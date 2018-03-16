@@ -13,7 +13,6 @@ import android.widget.EditText;
               github.com
               https://romannurik.github.io/AndroidAssetStudio/
     People: Jayme Doran <- Helped me with Navigation
-            Kuba Kulik <- Helped me with Sql syntax
  */
 
 public class MainActivity extends AppCompatActivity  {
